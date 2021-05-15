@@ -3,7 +3,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-import DocObject
 import csv
 
 class scraper:
@@ -55,7 +54,7 @@ class scraper:
             while True:
                 if (print_status and num_docs_parsed > 0):
                     print('Estimated Time Remaining: ',
-                          (total_docs_to_parse - num_docs_parsed) / (num_docs_parsed / (time.time() - start_time)))
+                          (total_docs_to_parse - num_docs_parsed) / (num_docs_parsed / (time.time() - start_time)), 'Seconds')
                 WebDriverWait(self.driver, 30).until(
                     EC.presence_of_element_located((By.CLASS_NAME, 'a11y-table')))
                 p_element = self.driver.find_element_by_class_name('a11y-table').find_element_by_tag_name(

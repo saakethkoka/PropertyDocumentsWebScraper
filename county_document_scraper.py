@@ -17,8 +17,6 @@ while True:
     except:
         print('Invalid Document type, please try again.')
 
-
-scraper.set_document_filter('ABANDONMENT OF ASSUMED NAME')
 scraper.scrape_data(output_file_name, True)
 scraper.close_driver()
 
